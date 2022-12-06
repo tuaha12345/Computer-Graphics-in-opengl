@@ -1,0 +1,292 @@
+
+#include <GL/glut.h>
+#include <stdio.h>
+#include <GL/gl.h>
+#include<math.h>
+
+void init(void)
+{
+    glClearColor(1.0, 1.0, 1.0, 1.0); //GLfloat red,green,blue,alpha initial value 0 alpha values used by glclear to clear the color buffers
+    glMatrixMode(GL_PROJECTION);  // To specify which matrix is the current matrix & projection applies subsequent matrix to projecton matrix stack
+    glLoadIdentity();
+    glOrtho(-100.0, 100.0, -100.0, 100.0, -1.0, 1.0);
+    //gluOrtho2D(0.0,300.0,0.0,300.0); // Orthographic representation; multiply the current matrix by an orthographic matrix 2D= left right,bottom,top equivalent near=-1,far=1
+}
+void circle0(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 0;i <= 360;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+void circle(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 0;i <= 70;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+
+void circle1(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 0;i <= 360;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+void circle2(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 90;i <= 270;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+void circle3(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 205;i <= 280;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+void circle4(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 3.1416;
+    glBegin(GL_POLYGON);
+    glVertex2f(x, y);
+    for (i = 290;i <= 350;i++)
+    {
+        angle = i * PI / 180;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+
+void Draw()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(0.66, 0.77, 0.77);
+    circle1(50, 45, 0, 0);
+
+
+
+
+    // glColor3f(0, 0, 0);
+    // circle(40, 45, 0, 0);
+
+    // glColor3f(0, 0, 0);
+    // circle1(40, 45, 0, 0);
+
+    // glColor3f(0, 0, 0);
+    // circle2(40, 45, 0, 0);
+    // glColor3f(0, 0, 0);
+    // circle3(40, 45, 0, 0);
+    // glColor3f(0, 0, 0);
+    // circle4(40, 45, 0, 0);
+
+    // glColor3f(0.66, 0.77, 0.77);
+    // circle0(15, 15, 0, 0);
+
+    // glColor3f(1, 1, 1);
+    // circle0(7, 7, 0, 0);
+
+
+
+
+
+
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(0, -45);
+    glVertex2f(5, -35);
+    glVertex2f(10, -43.9);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(10, -43.9);
+    glVertex2f(14, -35);
+    glVertex2f(20, -41.5);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(20, -41.5);
+    glVertex2f(23, -32);
+    glVertex2f(30, -35.7);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(30, -35.7);
+    glVertex2f(31, -27);
+    glVertex2f(40, -27.5);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(40, -27.5);
+    glVertex2f(38, -18);
+    glVertex2f(46, -18.5);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(46, -18.5);
+    glVertex2f(40, -11);
+    glVertex2f(49, -7.5);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(49, -7.5);
+    glVertex2f(42, -5);
+    glVertex2f(49.6, -0.5);
+    glEnd();
+
+glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(49.6, -0.5);
+    glVertex2f(43, 2);
+    glVertex2f(50, 6);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(50, 6);
+    glVertex2f(42, 8);
+    glVertex2f(48, 13);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(48, 13);
+    glVertex2f(40, 15);
+    glVertex2f(43, 24);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(43, 24);
+    glVertex2f(33, 25);
+    glVertex2f(32.5, 35);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(32.5, 35);
+    glVertex2f(22, 34);
+    glVertex2f(15.5, 43);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 1);
+    glVertex2f(15.5, 43);
+    glVertex2f(7, 34);
+    glVertex2f(0, 44.5);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(1, 0, 0);
+    glVertex2f(0, 0);
+    glVertex2f(5, -35);
+    glVertex2f(0, 0);
+    glVertex2f(14, -35);
+    glVertex2f(0, 0);
+    glVertex2f(7, 34);
+    glVertex2f(0, 0);
+    glVertex2f(22, 34);
+    glVertex2f(0, 0);
+    glVertex2f(33, 25);
+    glVertex2f(0, 0);
+    glVertex2f(40, 15);
+    glVertex2f(0, 0);
+    glVertex2f(42, 8);
+    glVertex2f(0, 0);
+    glVertex2f(43, 2);
+    glVertex2f(0, 0);
+    glVertex2f(42, -5);
+    glVertex2f(0, 0);
+    glVertex2f(40, -11);
+    glVertex2f(0, 0);
+    glVertex2f(38, -18);
+    glVertex2f(0, 0);
+    glVertex2f(31, -27);
+
+    glVertex2f(0, 0);
+    glVertex2f(23, -32);
+
+
+    // Write your Code
+    glEnd();
+
+    glColor3f(1, 0.77, 0.77);
+    circle1(10, 10, 0, 0);
+
+    glColor3f(1, 1, 1);
+    circle2(50, 45, 0, 0);
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0, 0);
+    glVertex2f(0, 47);
+    glVertex2f(-5, 47);
+    glVertex2f(-5, -90);
+    glVertex2f(0, -90);
+
+    glEnd();
+
+    glFlush();
+    glutSwapBuffers();
+}
+
+int main(int argc, char** argv) {
+
+
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+    glutInitWindowPosition(0, 0);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Panghkha");
+    init();
+    glutDisplayFunc(Draw);
+    glutMainLoop();
+    return 0;
+}
